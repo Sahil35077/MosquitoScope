@@ -17,10 +17,9 @@ Trained on **1,536 images** (41 species, ≥20 images/class) → **1,228 train /
 |--------|---------|-------------|---------------|-----------------|
 | Baseline (unweighted CE) | 1,081 imgs | 59.4% | 66.8% | 62.0% |
 | Full balanced weights | 1,081 imgs | ~59.5% | — | ~52.4% (CV) |
-| **Hybrid (production)** | 1,081 imgs | 69.0% | 72.8% | 69.4% |
 | **Hybrid (production)** | **1,536 imgs** | **73.9%** | **74.0%** | **70.6%** |
 
-**Production model:** `results_class_weight/final/mosquito_convnextv2_tiny_final.pth`
+**model:** `results_class_weight/final/mosquito_convnextv2_tiny_final.pth`
 
 | Metric | Value |
 |--------|-------|
@@ -334,7 +333,7 @@ Set `FORCE_RERUN_CV = False` in the CV cell to load existing results from `resul
 
 ## Limitations
 
-- **74% test accuracy** on 41 fine-grained species — strong for the dataset size but below 80% without more data
+- **74% test accuracy** on 41 fine-grained species — strong for the dataset size 
 - Similar species (*Culex*, *Psorophora*, *Aedes* spp.) remain easily confused
 - Single stratified split — no external geographic/temporal validation set
 - Model file (~107 MB) and `Data/` are gitignored — download or train locally
